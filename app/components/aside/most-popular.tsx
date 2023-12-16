@@ -5,7 +5,7 @@ import { PostType } from "../card-list/card";
 const MostPopular = ({ mostPopular }: { mostPopular: PostType[] }) => {
   return (
     <div>
-      <h3 className="text-gray-400 text-xs font-normal">What's hot</h3>
+      <h3 className="text-gray-400 text-xs font-normal">What&apos;s hot</h3>
       <h3 className="text-xl font-semibold">Most Popular</h3>
       <div className="flex flex-col gap-3 mt-4">
         {mostPopular &&
