@@ -7,11 +7,13 @@ import prisma from "@/libs/prismadb";
 
 const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
       clientSecret: process.env.GOOGLE_SECRET as string,
     }),
+
     // GithubProvider({
     //   clientId: process.env.GITHUB_ID as string,
     //   clientSecret: process.env.GITHUB_SECRET as string,
