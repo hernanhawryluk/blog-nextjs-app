@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
-import { NextApiRequest } from "next";
 
 export const GET = async (
-  req: NextApiRequest,
+  req: Request,
   { params }: { params: { slug: string } }
 ) => {
   const { slug } = params;
