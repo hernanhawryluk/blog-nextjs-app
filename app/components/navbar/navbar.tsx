@@ -14,7 +14,7 @@ const Navbar = () => {
         <Image src={"/youtube.png"} alt="Youtube" width={24} height={24} />
       </div>
       <div className="flex sm:w-1/3 text-left lg:text-center text-2xl xl:text-3xl font-bold">
-        Hernan's Blog
+        Hernan&apos;s Blog
       </div>
       <div className="hidden sm:flex w-2/3 xl:1/3 items-center justify-end gap-6 xl:text-lg">
         <ThemeToggle />

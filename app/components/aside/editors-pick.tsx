@@ -12,7 +12,11 @@ const EditorsPick = ({ editorsPick }: { editorsPick: PostType[] }) => {
       <div className="flex flex-col gap-3 mt-4">
         {editorsPick &&
           editorsPick.map((item) => (
-            <Link href={"/"} className="flex items-center gap-5">
+            <Link
+              href={`{/posts/${item.slug}`}
+              key={item.slug}
+              className="flex items-center gap-5"
+            >
               {item.img && (
                 <div className="border-4 rounded-full h-16 w-16 aspect-square relative">
                   <Image
