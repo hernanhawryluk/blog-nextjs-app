@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import Image from "next/image";
 import useSWR from "swr";
+import toast from "react-hot-toast";
 
 export type CommentType = {
   id: string;
@@ -20,7 +21,7 @@ export type CommentType = {
 };
 
 const Comments = ({ postSlug }: { postSlug: string }) => {
-  const { status } = useSession();
+  const { status, data: sessionData } = useSession();
   const [desc, setDesc] = useState("");
 
   const fetcher = async (url: string) => {
@@ -42,14 +43,32 @@ const Comments = ({ postSlug }: { postSlug: string }) => {
   );
 
   const handleSubmit = async () => {
-    await fetch("/api/comments", {
-      method: "POST",
-      body: JSON.stringify({
-        desc,
-        postSlug,
-      }),
-    });
+    if (desc === "") {
+      toast.error("Please enter a comment");
+      return;
+    }
+
+    if (status !== "authenticated") {
+      toast.error("Please login to write a comment");
+      return;
+    }
+
+    if (sessionData.user.email === data[data.length - 1].user.email) {
+      toast.error("You cannot comment twice in a post");
+      return;
+    }
+
+    data[data.length - 1].user.name ===
+      (await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify({
+          desc,
+          postSlug,
+        }),
+      }));
     mutate();
+    setDesc("");
+    toast.success("Comment created successfully");
   };
 
   return (
