@@ -24,7 +24,7 @@ const Categories = async () => {
         {categories.map((category: Category) => (
           <Link
             key={category.slug}
-            href={category.slug}
+            href={`blog?cat=${category.slug}`}
             style={{ backgroundColor: category.color }}
             className="flex items-center justify-center gap-2 h-10 w-[30%] rounded-md animation"
           >
