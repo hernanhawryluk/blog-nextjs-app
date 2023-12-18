@@ -15,7 +15,6 @@ const EditorsPick = ({ editorsPick }: { editorsPick: PostType[] }) => {
             <Link
               href={`/posts/${item.slug}`}
               key={item.slug}
-              aria-label={item.title}
               className="flex items-center gap-5"
             >
               {item.img && (

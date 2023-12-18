@@ -14,7 +14,6 @@ const MostPopular = ({ mostPopular }: { mostPopular: PostType[] }) => {
           mostPopular.map((item) => (
             <Link
               href={`/posts/${item.slug}`}
-              aria-label={item.title}
               key={item.slug}
               className="flex items-center gap-5"
             >
