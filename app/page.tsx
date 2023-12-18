@@ -5,7 +5,7 @@ import Aside from "./components/aside/aside";
 
 const getData = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/featured`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/featured/`
   );
 
   if (!res.ok) {

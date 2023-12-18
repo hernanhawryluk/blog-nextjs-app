@@ -39,8 +39,6 @@ const Write = () => {
   const router = useRouter();
   const { data, status } = useSession();
 
-  console.log(data);
-
   useEffect(() => {
     const upload = () => {
       if (!file) {
@@ -146,13 +144,13 @@ const Write = () => {
 
   return (
     <div>
-      <div className="flex mt-8">
-        <div className="flex flex-col">
+      <div className="flex flex-col sm:flex-row mt-8">
+        <div className="flex sm:flex-col">
           <button onClick={() => setOpen(!open)} className="mb-3">
             <MdAddCircleOutline size={52} />
           </button>
           {open && (
-            <div className="flex flex-col gap-2 pl-1">
+            <div className="flex flex-row ml-2 sm:ml-0 sm:flex-col gap-4 sm:gap-2 pl-1 pt-[6px] sm:pt-0">
               <input
                 type="file"
                 id="image"
@@ -186,14 +184,14 @@ const Write = () => {
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title..."
-            className="w-full px-6 py-2 text-4xl font-semibold bg-transparent outline-none placeholder:italic"
+            className="w-full px-1 sm:px-6 py-2 text-3xl font-semibold bg-transparent outline-none placeholder:italic"
           />
 
           <select
             aria-placeholder="Select category..."
             style={{ fontStyle: catSlug ? "" : "italic" }}
             className={
-              "w-fit my-3 ml-7 cursor-pointer bg-transparent text-2xl outline-none placeholder:italic"
+              "w-fit my-3 sm:ml-7 cursor-pointer bg-transparent text-2xl outline-none placeholder:italic"
             }
             onChange={(e) => setCatSlug(e.target.value)}
           >
@@ -211,7 +209,7 @@ const Write = () => {
             value={value}
             onChange={setValue}
             placeholder="Tell your story..."
-            className="w-[100%] px-2 min-h-[50vh] font-light text-2xl"
+            className="w-[100%] sm:px-2 min-h-[50vh] font-light sm:text-2xl"
           />
         </div>
       </div>

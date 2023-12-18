@@ -6,7 +6,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const buttonStyle = "w-[240px] h-12 font-semibold text-white";
+  const buttonStyle = "w-[220px] sm:w-[240px] h-12 font-semibold text-white";
   const { status } = useSession();
   const router = useRouter();
 
@@ -19,8 +19,8 @@ const Login = () => {
   }
 
   return (
-    <div className="flex justify-center items-center my-12">
-      <div className="flex flex-col bg-gray-200 dark:bg-slate-800 py-20 px-32 gap-12 rounded-lg">
+    <div className="flex justify-center items-center mt-12 mb-20">
+      <div className="flex flex-col justify-center items-center bg-gray-200 bg-opacity-80 dark:bg-slate-800 py-20 w-full sm:w-[480px] gap-12 rounded-lg">
         <Button
           label="Sign in with Google"
           icon={FaGoogle}

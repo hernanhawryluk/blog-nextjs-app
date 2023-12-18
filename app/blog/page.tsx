@@ -11,7 +11,7 @@ const BlogPage = ({
 
   return (
     <div>
-      <h1 className="bg-red-400 text-center py-1 mb-7 capitalize">
+      <h1 className="bg-red-400 bg-opacity-30 text-center py-3 mb-6 sm:mb-10 capitalize text-2xl font-semibold">
         {cat} Blog
       </h1>
       <div className="flex gap-12">
