@@ -7,11 +7,11 @@ const MostPopular = ({ mostPopular }: { mostPopular: PostType[] }) => {
     <div>
       <h3 className="text-gray-400 text-xs font-normal">What&apos;s hot</h3>
       <h3 className="text-xl font-semibold">Most Popular</h3>
-      <div className="flex flex-col gap-3 mt-4">
+      <div className="flex flex-col gap-4 mt-4">
         {mostPopular &&
           mostPopular.map((item) => (
             <Link
-              href={`{/posts/${item.slug}`}
+              href={`/posts/${item.slug}`}
               key={item.slug}
               className="flex items-center gap-5"
             >
@@ -26,7 +26,7 @@ const MostPopular = ({ mostPopular }: { mostPopular: PostType[] }) => {
                 </div>
               )}
               <div className="flex flex-2 flex-col gap-1">
-                <span className="flex items-center text-xs font-medium text-gray-500 bg-orange-400 h-5 px-3 max-w-fit rounded-full">
+                <span className="flex items-center text-xs font-medium bg-sky-200 text-gray-800 dark:bg-sky-700 dark:text-white h-5 px-3 max-w-fit rounded-full">
                   {item.catSlug}
                 </span>
                 <h3 className="text-md">{item.title}</h3>

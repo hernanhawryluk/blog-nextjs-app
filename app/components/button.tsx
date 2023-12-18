@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
       <button
         onClick={onClick}
         disabled={disabled}
-        className={`flex justify-center items-center disabled:opacity-70 disabled:cursor-not-allowed w-full gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer rounded-md py-2
+        className={`flex justify-center items-center disabled:cursor-not-allowed w-full gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer rounded-md py-2
       ${custom}`}
       >
         {isLoading && <CircularProgress size={20} />}

@@ -4,18 +4,17 @@ import Image from "next/image";
 import Button from "../button";
 import { useRouter } from "next/navigation";
 import { PostType } from "../card-list/card";
+import Link from "next/link";
 
 const Featured = ({ data }: { data: PostType }) => {
   const router = useRouter();
 
   return (
     <div>
-      <h1 className="text-3xl sm:text-5xl font-semibold">
-        <span className="font-bold">Hey there, Hernan here!</span>{" "}
-        <span className="font-normal">
-          Discover my stories and creative ideas.
-        </span>
-      </h1>
+      <div className="text-3xl sm:text-5xl font-semibold">
+        <p className="font-bold mb-1">A Journey into Creativity!</p>
+        <h1 className="font-normal">Discover my stories and creative ideas.</h1>
+      </div>
 
       <div className="mt-14 flex items-center gap-12">
         {data.img && (
@@ -24,16 +23,19 @@ const Featured = ({ data }: { data: PostType }) => {
           </div>
         )}
         <div className="flex-1 flex flex-col gap-5">
-          <h2 className="text-3xl font-semibold">{data.title}</h2>
-          <p className="text-md font-light text-gray-500 dark:text-gray-400">
-            {data.desc.length > 60
-              ? data.desc.substring(0, 60) + "..."
-              : data.desc}
-          </p>
+          <Link href={`/posts/${data.slug}`}>
+            <h2 className="text-4xl font-semibold">{data.title}</h2>
+          </Link>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.desc.substring(0, 220) + "...",
+            }}
+            className="text-lg font-light text-gray-500 dark:text-gray-400"
+          />
           <div className="w-[8rem]">
             <Button
               label="Read More"
-              custom="dark:bg-gray-50 dark:text-gray-900 text-xs"
+              custom="border-2 border-gray-600 dark:border-none dark:bg-gray-50 dark:text-gray-900 text-xs"
               onClick={() => router.push(`/posts/${data.slug}`)}
             />
           </div>

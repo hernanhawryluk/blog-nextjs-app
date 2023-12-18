@@ -26,7 +26,7 @@ const Categories = async () => {
             key={category.slug}
             href={category.slug}
             style={{ backgroundColor: category.color }}
-            className="flex items-center justify-center gap-2 h-10 w-[30%] rounded-md"
+            className="flex items-center justify-center gap-2 h-10 w-[30%] rounded-md animation"
           >
             {category.title}
           </Link>

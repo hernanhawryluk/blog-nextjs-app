@@ -25,7 +25,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
     <div>
       <div className="flex sm:flex-row gap-12">
         <div className="sm:w-[50%] flex flex-col gap-5">
-          <h1 className="text-4xl font-bold">{data.title}</h1>
+          <h1 className="text-6xl font-bold">{data.title}</h1>
           <div className="flex gap-3 items-center">
             {data?.user?.image && (
               <div className="h-[35px] w-[35px] relative">
@@ -54,7 +54,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
       </div>
 
       <div className="flex mt-12 gap-12">
-        <div className="sm:w-[65%] flex flex-col gap-12">
+        <div className="sm:w-full flex flex-col gap-12">
           <div dangerouslySetInnerHTML={{ __html: data.desc }}></div>
           <Comments postSlug={data.slug} />
         </div>

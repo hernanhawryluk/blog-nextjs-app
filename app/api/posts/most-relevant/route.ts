@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-const NUMBER_OF_POSTS = 3;
+const NUMBER_OF_POSTS = 4;
 
 export const GET = async () => {
   try {

@@ -38,14 +38,19 @@ const Card = ({ item }: { item: PostType }) => {
           </span>
         </div>
         <Link href={`/posts/${item.slug}`}>
-          <h2 className="text-2xl font-semibold">{item.title}</h2>
+          <h2 className="text-3xl font-semibold">{item.title}</h2>
         </Link>
-        <p className="text-md font-light text-gray-500 dark:text-gray-300">
-          {item.desc.length > 60
-            ? item.desc.substring(0, 60) + "..."
-            : item.desc}
-        </p>
-        <Link href={`/posts/${item.slug}`} className="border-b-2 max-w-fit">
+        <div
+          className="text-md font-light text-gray-500 dark:text-gray-300"
+          dangerouslySetInnerHTML={{
+            __html: item.desc.substring(0, 240) + "...",
+          }}
+        />
+
+        <Link
+          href={`/posts/${item.slug}`}
+          className="border-b-2 max-w-fit animation"
+        >
           Read More
         </Link>
       </div>

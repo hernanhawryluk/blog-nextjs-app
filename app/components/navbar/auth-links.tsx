@@ -9,13 +9,17 @@ const AuthLinks = () => {
   return (
     <>
       {status === "unauthenticated" ? (
-        <Link href={"/login"}>Login</Link>
+        <Link href={"/login"} className="animation">
+          Login
+        </Link>
       ) : (
         <>
           {data && data.user.admin === true && (
-            <Link href={"/write"}>Write</Link>
+            <Link href={"/write"} className="animation">
+              Write
+            </Link>
           )}
-          <span onClick={() => signOut()} className="cursor-pointer">
+          <span onClick={() => signOut()} className="cursor-pointer animation">
             Logout
           </span>
         </>

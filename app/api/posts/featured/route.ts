@@ -4,8 +4,11 @@ import prisma from "@/libs/prismadb";
 export const GET = async () => {
   try {
     const featuredPost = await prisma.post.findFirst({
+      where: {
+        isEditorPick: true,
+      },
       orderBy: {
-        createdAt: "asc",
+        createdAt: "desc",
       },
       include: {
         user: true,

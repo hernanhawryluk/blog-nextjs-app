@@ -25,13 +25,13 @@ type CardListPros = {
 const CardList = async ({ page, cat }: CardListPros) => {
   const { posts, count } = await getData(page, cat || "");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 3;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
   return (
-    <div className="sm:w-[65%]">
+    <div className="sm:w-full">
       <h2 className="text-xl sm:text-3xl font-bold mb-12">Recent Posts</h2>
       <div className="flex flex-col">
         {posts?.map((item: PostType) => (

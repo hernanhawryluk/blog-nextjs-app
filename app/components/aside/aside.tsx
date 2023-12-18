@@ -18,7 +18,10 @@ const Aside = async () => {
   const { mostPopular, editorsPick } = await getData();
 
   return (
-    <div className="hidden sm:flex flex-col gap-8 w-[30%]">
+    <div
+      className="hidden sm:flex sm:flex-col sm:gap-10
+     w-[30rem]"
+    >
       <MostPopular mostPopular={mostPopular} />
       <Categories />
       <EditorsPick editorsPick={editorsPick} />

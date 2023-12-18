@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { MdAddCircleOutline } from "react-icons/md";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { FaRegImage } from "react-icons/fa";
+import { FaCheck, FaRegImage } from "react-icons/fa";
 import { GoVideo } from "react-icons/go";
 import Button from "../components/button";
 import { useRouter } from "next/navigation";
@@ -48,7 +48,7 @@ const Write = () => {
         return;
       }
 
-      const name = new Date().getTime + file.name;
+      const name = new Date().getTime() + file.name;
 
       const storageRef = ref(storage, name);
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -165,7 +165,11 @@ const Write = () => {
               />
               <label htmlFor="image" className="cursor-pointer">
                 <div className={buttonStyle}>
-                  <FaRegImage size={20} />
+                  {media === "" ? (
+                    <FaRegImage size={20} />
+                  ) : (
+                    <FaCheck size={20} className="text-teal-500" />
+                  )}
                 </div>
               </label>
               <button className={buttonStyle}>
@@ -177,12 +181,12 @@ const Write = () => {
             </div>
           )}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <input
             type="text"
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title..."
-            className="w-[100%] px-6 py-2 text-4xl font-semibold bg-transparent outline-none placeholder:italic"
+            className="w-full px-6 py-2 text-4xl font-semibold bg-transparent outline-none placeholder:italic"
           />
 
           <select
@@ -193,7 +197,8 @@ const Write = () => {
             }
             onChange={(e) => setCatSlug(e.target.value)}
           >
-            <option value="style">style</option>
+            <option value="select">Select a category</option>
+            <option value="anime">anime</option>
             <option value="fashion">fashion</option>
             <option value="food">food</option>
             <option value="culture">culture</option>

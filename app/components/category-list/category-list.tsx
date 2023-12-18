@@ -31,7 +31,7 @@ const CategoryList = async () => {
             key={category.slug}
             href={`blog?cat=${category.slug}`}
             style={{ backgroundColor: category.color }}
-            className="flex items-center justify-center gap-2 h-12 w-[48%] md:w-[32%] lg:w-[15%] rounded-md"
+            className="flex items-center justify-center gap-2 h-12 w-[48%] md:w-[32%] lg:w-[15%] rounded-md animation"
           >
             {category.img && (
               <Image

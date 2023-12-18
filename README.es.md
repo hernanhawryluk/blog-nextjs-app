@@ -39,7 +39,7 @@ Una blog web desarrollado en Next.js y desplegado en Vercel que ofrece una exper
 
 ## Visita la aplicación web
 
-- https://blog-nextjs-app-pi.vercel.app
+- https://blog-nextjs-app-hernan-hawryluks-projects.vercel.app
 
 ## ¿Donde encontrarme?
 

@@ -18,9 +18,15 @@ const NavMenu = () => {
       </div>
       {open && (
         <div className="flex flex-col gap-12 w-full absolute top-[100px] left-0 bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50 items-center justify-center h-[70vh] text-2xl">
-          <Link href={"/"}>Homepage</Link>
-          <Link href={"/"}>About</Link>
-          <Link href={"/"}>Contact</Link>
+          <Link href={"/"} className="animation">
+            Home
+          </Link>
+          <Link href={"/"} className="animation">
+            About
+          </Link>
+          <Link href={"/"} className="animation">
+            Contact
+          </Link>
           <AuthLinks />
         </div>
       )}

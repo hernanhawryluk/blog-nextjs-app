@@ -17,29 +17,56 @@ const Footer = () => {
           <h2 className="text-xl font-semibold">{footerData.title}</h2>
         </div>
         <div className="text-sm">
-          <p>{footerData.p0}</p>
+          <p className="mb-2">{footerData.p0}</p>
           <p>{footerData.p1}</p>
         </div>
         <div className="flex gap-2 mt-3">
-          <Image src={"/facebook.png"} alt="Facebook" width={18} height={18} />
-          <Image
-            src={"/instagram.png"}
-            alt="Instagram"
-            width={18}
-            height={18}
-          />
-          <Image src={"/tiktok.png"} alt="TikTok" width={18} height={18} />
-          <Image src={"/youtube.png"} alt="Youtube" width={18} height={18} />
+          <Link href={"/"} className="animation">
+            <Image
+              src={"/facebook.png"}
+              alt="Facebook"
+              width={24}
+              height={24}
+            />
+          </Link>
+          <Link href={"/"} className="animation">
+            <Image
+              src={"/instagram.png"}
+              alt="Instagram"
+              width={24}
+              height={24}
+            />
+          </Link>
+          <Link href={"/"} className="animation">
+            <Image
+              src={"/tiktok.png"}
+              alt="TikTok"
+              width={24}
+              height={24}
+              className="dark:p-[1px] dark:rounded-full dark:bg-gray-300"
+            />
+          </Link>
+          <Link href={"/"} className="animation">
+            <Image src={"/youtube.png"} alt="Youtube" width={24} height={24} />
+          </Link>
         </div>
       </div>
-      <div className="flex justify-between text-xs sm:w-[35%] sm:pt-5">
+      <div className="flex justify-between text-xs sm:w-[35%] sm:pt-4">
         {footerLinks.map((link) => (
-          <div key={link.title} className="flex flex-col gap-4">
-            <span className="font-semibold">{link.title}</span>
-            <Link href={link.link0}>{link.name0}</Link>
-            <Link href={link.link1}>{link.name1}</Link>
-            <Link href={link.link2}>{link.name2}</Link>
-            <Link href={link.link3}>{link.name3}</Link>
+          <div key={link.title} className="flex flex-col gap-5">
+            <span className="text-sm font-semibold">{link.title}</span>
+            <Link href={link.link0} className="animation">
+              {link.name0}
+            </Link>
+            <Link href={link.link1} className="animation">
+              {link.name1}
+            </Link>
+            <Link href={link.link2} className="animation">
+              {link.name2}
+            </Link>
+            <Link href={link.link3} className="animation">
+              {link.name3}
+            </Link>
           </div>
         ))}
       </div>
