@@ -38,11 +38,7 @@ const Card = ({ item }: { item: PostType }) => {
           </span>
         </div>
         <h2>
-          <Link
-            aria-label={item.title}
-            href={`/posts/${item.slug}`}
-            className="text-3xl font-semibold"
-          >
+          <Link href={`/posts/${item.slug}`} className="text-3xl font-semibold">
             {item.title}
           </Link>
         </h2>
@@ -55,6 +51,7 @@ const Card = ({ item }: { item: PostType }) => {
 
         <Link
           href={`/posts/${item.slug}`}
+          aria-label={item.title}
           className="border-b-2 max-w-fit animation"
         >
           Read More
