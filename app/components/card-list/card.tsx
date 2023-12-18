@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../button";
+import { useRouter } from "next/navigation";
 
 type User = {
   name: string;
@@ -21,6 +25,8 @@ export type PostType = {
 };
 
 const Card = ({ item }: { item: PostType }) => {
+  const router = useRouter();
+
   return (
     <div className="flex gap-12 mb-12 items-center">
       {item.img && (
@@ -37,25 +43,22 @@ const Card = ({ item }: { item: PostType }) => {
             {item.catSlug.toUpperCase()}
           </span>
         </div>
-        <h2>
-          <Link href={`/posts/${item.slug}`} className="text-3xl font-semibold">
-            {item.title}
-          </Link>
-        </h2>
+        <Link href={`/posts/${item.slug}`}>
+          <h2 className="text-3xl font-semibold">{item.title}</h2>
+        </Link>
         <div
           className="text-md font-light text-gray-500 dark:text-gray-300"
           dangerouslySetInnerHTML={{
             __html: item.desc.substring(0, 240) + "...",
           }}
         />
-
-        <Link
-          href={`/posts/${item.slug}`}
-          aria-label={item.title}
-          className="border-b-2 max-w-fit animation"
-        >
-          Read More
-        </Link>
+        <div className="w-[8rem]">
+          <Button
+            label="Read More"
+            custom="border-2 border-gray-600 dark:border-none dark:bg-gray-50 dark:text-gray-900 text-xs"
+            onClick={() => router.push(`/posts/${item.slug}`)}
+          />
+        </div>
       </div>
     </div>
   );
