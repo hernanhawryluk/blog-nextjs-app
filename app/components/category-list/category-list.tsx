@@ -38,9 +38,9 @@ const CategoryList = async () => {
             {category.img && (
               <Image
                 src={category.img}
-                alt={category.title}
                 width={20}
                 height={20}
+                alt={"category: " + category.title}
                 className="overflow-hidden rounded-full aspect-square"
               />
             )}

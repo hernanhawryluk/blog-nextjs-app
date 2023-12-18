@@ -29,15 +29,15 @@ const Card = ({ item }: { item: PostType }) => {
         </div>
       )}
       <div className="flex flex-col flex-1 gap-4">
-        <div className="hidden sm:block text-sm opacity-70 dark:opacity-50">
-          <span className="text-gray-500 dark:text-gray-200">
+        <div className="hidden sm:block text-sm opacity-70 dark:opacity-60">
+          <span className="text-gray-500 dark:text-gray-400">
             {item.createdAt.substring(0, 10)} -{" "}
           </span>
           <span className="text-pink-800 dark:text-rose-500 font-normal opacity-80">
             {item.catSlug.toUpperCase()}
           </span>
         </div>
-        <Link href={`/posts/${item.slug}`}>
+        <Link aria-aria-label={item.title} href={`/posts/${item.slug}`}>
           <h2 className="text-3xl font-semibold">{item.title}</h2>
         </Link>
         <div

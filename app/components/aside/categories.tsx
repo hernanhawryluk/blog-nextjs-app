@@ -18,7 +18,9 @@ const Categories = async () => {
 
   return (
     <div>
-      <h3 className="text-gray-400 text-xs font-normal">Discover by topic</h3>
+      <h3 className="text-gray-500 dark:text-gray-400 opacity-80 text-xs font-normal">
+        Discover by topic
+      </h3>
       <h3 className="text-xl font-semibold mb-4">Categories</h3>
       <div className="flex flex-wrap justify-between items-center gap-2">
         {categories.map((category: Category) => (

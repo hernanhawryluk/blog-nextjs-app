@@ -4,10 +4,7 @@ import { PostType } from "./card";
 
 const getData = async (page: number, cat: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?page=${page}&cat=${cat}`,
-    {
-      cache: "no-store",
-    }
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?page=${page}&cat=${cat}`
   );
 
   if (!res.ok) {

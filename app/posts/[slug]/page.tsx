@@ -4,10 +4,7 @@ import Comments from "@/app/components/comments/comments";
 
 const getData = async (slug: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${slug}`,
-    {
-      cache: "no-store",
-    }
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${slug}`
   );
 
   if (!res.ok) {

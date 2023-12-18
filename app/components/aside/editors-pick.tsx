@@ -5,7 +5,7 @@ import { PostType } from "../card-list/card";
 const EditorsPick = ({ editorsPick }: { editorsPick: PostType[] }) => {
   return (
     <div>
-      <h3 className="text-gray-400 text-xs font-normal">
+      <h3 className="text-gray-500 dark:text-gray-400 opacity-80 text-xs font-normal">
         Choosen by the editor
       </h3>
       <h3 className="text-xl font-semibold">Editors Pick</h3>
@@ -15,6 +15,7 @@ const EditorsPick = ({ editorsPick }: { editorsPick: PostType[] }) => {
             <Link
               href={`/posts/${item.slug}`}
               key={item.slug}
+              aria-label={item.title}
               className="flex items-center gap-5"
             >
               {item.img && (
