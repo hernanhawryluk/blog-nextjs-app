@@ -37,9 +37,15 @@ const Card = ({ item }: { item: PostType }) => {
             {item.catSlug.toUpperCase()}
           </span>
         </div>
-        <Link aria-label={item.title} href={`/posts/${item.slug}`}>
-          <h2 className="text-3xl font-semibold">{item.title}</h2>
-        </Link>
+        <h2>
+          <Link
+            aria-label={item.title}
+            href={`/posts/${item.slug}`}
+            className="text-3xl font-semibold"
+          >
+            {item.title}
+          </Link>
+        </h2>
         <div
           className="text-md font-light text-gray-500 dark:text-gray-300"
           dangerouslySetInnerHTML={{
