@@ -32,7 +32,7 @@ const EditorsPick = ({ editorsPick }: { editorsPick: PostType[] }) => {
                   {item.catSlug}
                 </span>
                 <h3 className="text-md">{item.title}</h3>
-                <div className="flex flex-nowrap text-xs">
+                <div className="hidden lg:flex flex-nowrap text-xs">
                   <span>{item.user.name} - </span>
                   <span className="text-gray-400">
                     {item.createdAt.substring(0, 10)}

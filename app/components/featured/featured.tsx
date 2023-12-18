@@ -11,12 +11,16 @@ const Featured = ({ data }: { data: PostType }) => {
 
   return (
     <div>
-      <div className="text-3xl sm:text-5xl font-semibold">
-        <p className="font-bold mb-1">A Journey into Creativity!</p>
-        <h1 className="font-normal">Discover my stories and creative ideas.</h1>
+      <div>
+        <p className="font-bold mb-1 text-2xl sm:text-5xl">
+          A Journey into Creativity!
+        </p>
+        <h1 className="font-normal text-sm sm:text-5xl">
+          Discover my stories and creative ideas.
+        </h1>
       </div>
 
-      <div className="mt-14 flex items-center gap-12">
+      <div className="mt-8 sm:mt-14 flex items-center gap-12">
         {data.img && (
           <div className="hidden sm:flex flex-1 w-full h-[300px] relative">
             <Image src={data.img} alt="image" fill className="object-cover" />
@@ -24,11 +28,11 @@ const Featured = ({ data }: { data: PostType }) => {
         )}
         <div className="flex-1 flex flex-col gap-5">
           <Link href={`/posts/${data.slug}`}>
-            <h2 className="text-4xl font-semibold">{data.title}</h2>
+            <h2 className="text-3xl sm:text-4xl font-semibold">{data.title}</h2>
           </Link>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.desc.substring(0, 220) + "...",
+              __html: data.desc.substring(0, 207) + "...",
             }}
             className="text-lg font-light text-gray-500 dark:text-gray-400"
           />

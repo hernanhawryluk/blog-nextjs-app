@@ -6,8 +6,8 @@ import NavMenu from "./nav-menu";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between h-[100px]">
-      <div className="flex sm:w-1/3 text-left lg:text-center text-2xl xl:text-3xl font-bold">
+    <nav className="flex items-center justify-between h-[80px] sm:h-[100px]">
+      <div className="flex sm:w-1/3 text-left text-2xl xl:text-3xl font-bold">
         Coding Blog
       </div>
       <div className="hidden sm:flex w-2/3 xl:1/3 items-center justify-end gap-6 xl:text-lg">

@@ -32,7 +32,9 @@ const CardList = async ({ page, cat }: CardListPros) => {
 
   return (
     <div className="sm:w-full">
-      <h2 className="text-xl sm:text-3xl font-bold mb-12">Recent Posts</h2>
+      <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-8">
+        Recent Posts
+      </h2>
       <div className="flex flex-col">
         {posts?.map((item: PostType) => (
           <Card key={item.id} item={item} />

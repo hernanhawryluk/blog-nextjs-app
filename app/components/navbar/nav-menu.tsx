@@ -17,7 +17,7 @@ const NavMenu = () => {
         <FaBars size={23} />
       </div>
       {open && (
-        <div className="flex flex-col gap-12 w-full absolute top-[100px] left-0 bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50 items-center justify-center h-[70vh] text-2xl">
+        <div className="flex flex-col gap-16 w-full h-[92vh] absolute top-[80px] left-0 bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50 items-center justify-center text-2xl pb-12">
           <Link href={"/"} className="animation">
             Home
           </Link>

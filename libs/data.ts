@@ -1,46 +1,7 @@
-export const categories = [
-  {
-    label: "Style",
-    link: "/",
-    image: "/style.png",
-    color: "#57c4ff31",
-  },
-  {
-    label: "Fashion",
-    link: "/",
-    image: "/fashion.png",
-    color: "#da85c731",
-  },
-  {
-    label: "Food",
-    link: "/",
-    image: "/food.png",
-    color: "#7fb88133",
-  },
-  {
-    label: "Travel",
-    link: "/",
-    image: "/travel.png",
-    color: "#ff795736",
-  },
-  {
-    label: "Culture",
-    link: "/",
-    image: "/culture.png",
-    color: "#ffb04f45",
-  },
-  {
-    label: "Coding",
-    link: "/",
-    image: "/coding.png",
-    color: "#5e4fff31",
-  },
-];
-
 export const footerData = {
-  title: "Hernan's Blog",
-  p0: "Copyright © 2023 - All right reserved",
-  p1: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis fuga eius inventore natus deleniti at! Explicabo rem accusamus consequuntur non, nihil blanditiis veritatis adipisci ab reprehenderit hic earum fuga reiciendis?",
+  title: "Coding Blog",
+  p0: "Copyright © 2023 - All right reserved.",
+  p1: "Passionate Full-Stack Developer skilled in React, Next.js and React Native, dedicated to delivering high-quality digital experiences. Find me on social networks.",
 };
 
 export const footerLinks = [
