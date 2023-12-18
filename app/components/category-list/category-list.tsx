@@ -41,7 +41,7 @@ const CategoryList = async () => {
                 width={20}
                 height={20}
                 alt={"category: " + category.title}
-                className="overflow-hidden rounded-full aspect-square"
+                className="overflow-hidden rounded-full"
               />
             )}
             {category.title}
