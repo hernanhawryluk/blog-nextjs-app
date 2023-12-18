@@ -54,23 +54,29 @@ const Comments = ({ postSlug }: { postSlug: string }) => {
 
   return (
     <div>
-      <h1>Comments</h1>
+      <h1 className="font-semibold text-lg">Comments</h1>
       {status === "authenticated" ? (
-        <div>
+        <div className="mb-8">
           <textarea
             placeholder="Write a comment..."
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
-            className="w-full rounded-md p-2 dark:text-gray-800"
+            className="w-full border-2 border-gray-400 rounded-md p-2 my-2 dark:text-gray-800"
           />
-          <Button label="Send" onClick={() => handleSubmit()} />
+          <Button
+            label="Send"
+            custom="border-2 font-medium border-gray-800 dark:border-gray-200"
+            onClick={() => handleSubmit()}
+          />
         </div>
       ) : (
-        <Link href={"/login"}>Login to write a comment</Link>
+        <div className="mt-2 mb-8">
+          <Link href={"/login"}>Login to write a comment</Link>
+        </div>
       )}
       <div className="flex flex-col gap-6">
         {isLoading ? (
-          <div>Loading comments...</div>
+          <div className="mt-2 mb-8">Loading comments...</div>
         ) : (
           data?.map((item: CommentType) => (
             <div key={item.id} className="flex flex-col gap-2">
@@ -85,9 +91,15 @@ const Comments = ({ postSlug }: { postSlug: string }) => {
                     />
                   </div>
                 )}
-                <div className="flex flex-col text-gray-500 ">
-                  <span className="font-semibold">{item.user.name}</span>
-                  <span className="text-xs">{item.createdAt}</span>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">
+                    {item.user.name}
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    {item.createdAt.substring(0, 10) +
+                      " - " +
+                      item.createdAt.substring(11, 16)}
+                  </span>
                 </div>
               </div>
               <div>{item.desc}</div>
