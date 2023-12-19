@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import AuthLinks from "./auth-links";
 import ThemeToggle from "./theme-toggle";
@@ -6,7 +5,7 @@ import NavMenu from "./nav-menu";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between h-[80px] sm:h-[100px]">
+    <nav className="flex items-center justify-between h-[80px] sm:h-[120px]">
       <div className="flex sm:w-1/3 text-left text-2xl xl:text-3xl font-bold">
         Coding Blog
       </div>

@@ -30,7 +30,7 @@ const Card = ({ item }: { item: PostType }) => {
   return (
     <div className="flex gap-12 mb-12 items-center">
       {item.img && (
-        <div className="hidden lg:flex flex-1 h-[350px] max-w-[120px] xl:max-w-[250px] 2xl:max-w-[580px] relative">
+        <div className="hidden lg:flex flex-1 h-[320px] max-w-[120px] xl:max-w-[250px] 2xl:max-w-[580px] relative">
           <Image src={item.img} alt="image" fill className="object-cover" />
         </div>
       )}
@@ -49,7 +49,7 @@ const Card = ({ item }: { item: PostType }) => {
         <div
           className="text-md font-light text-gray-500 dark:text-gray-300"
           dangerouslySetInnerHTML={{
-            __html: item.desc.substring(0, 240) + "...",
+            __html: item.desc.substring(0, 332) + "...",
           }}
         />
         <div className="w-[8rem]">
