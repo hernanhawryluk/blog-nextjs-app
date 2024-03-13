@@ -6,7 +6,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const buttonStyle = "w-[220px] sm:w-[240px] h-12 font-semibold text-white";
+  const buttonStyle = "w-[230px] sm:w-[240px] h-12 font-semibold text-white";
   const { status } = useSession();
   const router = useRouter();
 
@@ -19,10 +19,13 @@ const Login = () => {
   }
 
   return (
-    <div className="flex justify-center items-center mt-12 mb-20">
+    <div
+      className="flex justify-center items-center mt-12 mb-20"
+      style={{ minHeight: "calc(100vh - 460px)" }}
+    >
       <div className="flex flex-col justify-center items-center bg-gray-200 bg-opacity-80 dark:bg-slate-800 py-20 w-full sm:w-[480px] gap-12 rounded-lg">
         <Button
-          label="Sign in with Google"
+          label="Login with Google"
           icon={FaGoogle}
           custom={`bg-red-500 dark:bg-red-500
           ${buttonStyle}
@@ -30,7 +33,7 @@ const Login = () => {
           onClick={() => signIn("google")}
         />
         <Button
-          label="Sign in with GitHub"
+          label="Login with GitHub"
           icon={FaGithub}
           custom={`bg-black dark:bg-black
           ${buttonStyle}
@@ -38,7 +41,7 @@ const Login = () => {
           onClick={() => signIn("github")}
         />
         <Button
-          label="Sign in with Facebook"
+          label="Login with Facebook"
           icon={FaFacebook}
           custom={`bg-blue-600 dark:bg-blue-600
           ${buttonStyle}

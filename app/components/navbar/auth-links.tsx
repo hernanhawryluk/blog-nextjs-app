@@ -3,23 +3,37 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
-const AuthLinks = () => {
+type AuthLinksType = {
+  closeMenu: () => void;
+};
+
+const AuthLinks = ({ closeMenu }: AuthLinksType) => {
   const { data, status } = useSession();
 
   return (
     <>
       {status === "unauthenticated" ? (
-        <Link href={"/login"} className="animation">
+        <Link href={"/login"} className="animation" onClick={() => closeMenu()}>
           Login
         </Link>
       ) : (
         <>
           {data && data.user.admin === true && (
-            <Link href={"/write"} className="animation">
+            <Link
+              href={"/write"}
+              className="animation"
+              onClick={() => closeMenu()}
+            >
               Write
             </Link>
           )}
-          <span onClick={() => signOut()} className="cursor-pointer animation">
+          <span
+            onClick={() => {
+              signOut();
+              closeMenu();
+            }}
+            className="cursor-pointer animation"
+          >
             Logout
           </span>
         </>
