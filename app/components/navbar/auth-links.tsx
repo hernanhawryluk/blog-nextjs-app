@@ -4,10 +4,10 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 type AuthLinksType = {
-  closeMenu: () => void;
+  closeMenu?: () => void;
 };
 
-const AuthLinks = ({ closeMenu }: AuthLinksType) => {
+const AuthLinks = ({ closeMenu = () => {} }: AuthLinksType) => {
   const { data, status } = useSession();
 
   return (
