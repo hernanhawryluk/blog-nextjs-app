@@ -2,6 +2,7 @@
 
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type AuthLinksType = {
   closeMenu?: () => void;
@@ -9,11 +10,18 @@ type AuthLinksType = {
 
 const AuthLinks = ({ closeMenu = () => {} }: AuthLinksType) => {
   const { data, status } = useSession();
+  const pathname = usePathname();
 
   return (
     <>
       {status === "unauthenticated" ? (
-        <Link href={"/login"} className="animation" onClick={() => closeMenu()}>
+        <Link
+          href={"/login"}
+          className={`animation ${
+            pathname === "/login" ? "underline underline-offset-4" : ""
+          }`}
+          onClick={() => closeMenu()}
+        >
           Login
         </Link>
       ) : (
