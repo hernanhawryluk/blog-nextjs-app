@@ -32,7 +32,12 @@ const Navbar = () => {
         >
           Contact
         </Link>
-        <Link href={"/"} className="animation">
+        <Link
+          href={"/about"}
+          className={`animation ${
+            pathname === "/about" ? "underline underline-offset-4" : ""
+          }`}
+        >
           About
         </Link>
         <AuthLinks />

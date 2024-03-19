@@ -27,7 +27,7 @@ export default function RootLayout({
         <AuthProvider>
           <ThemeContextProvider>
             <Toaster position="top-right" reverseOrder={false} />
-            <div className="px-[6%] sm:px-[10%] 2xl:px-[15%]">
+            <div className="px-[6%] sm:px-[10%] max-w-[1700px] mx-auto">
               <Navbar />
               {children}
               <Footer />

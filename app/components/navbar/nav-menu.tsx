@@ -25,10 +25,18 @@ const NavMenu = () => {
           <Link href={"/"} className="animation" onClick={() => closeMenu()}>
             Home
           </Link>
-          <Link href={"/"} className="animation" onClick={() => closeMenu()}>
+          <Link
+            href={"/about"}
+            className="animation"
+            onClick={() => closeMenu()}
+          >
             About
           </Link>
-          <Link href={"/"} className="animation" onClick={() => closeMenu()}>
+          <Link
+            href={"/contact"}
+            className="animation"
+            onClick={() => closeMenu()}
+          >
             Contact
           </Link>
           <AuthLinks closeMenu={closeMenu} />
