@@ -9,7 +9,7 @@ const About = () => {
     {
       id: 1,
       title: "Portfolio Website",
-      link: "https://portfolio-hernan-hawryluks-projects.vercel.app/",
+      link: "https://hernan-hawryluk.vercel.app/",
     },
     {
       id: 2,
